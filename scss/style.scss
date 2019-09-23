@@ -1,0 +1,385 @@
+/*=================================
+      SASS AND BEM NOTACTION
+===================================*/
+
+
+/*==================================
+COLOR VARIABLES
+====================================*/
+$softBlue: hsl(243, 86%, 85%);
+$darkBlue: hsl(243, 87%, 12%);
+$green: hsl(163, 95%, 43%);
+$gray: hsl(0, 0%, 50%);
+
+
+// html {
+//     height: 100%;
+// }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    // background-color: cyan;
+    // min-height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+
+/*==================================
+            HERO SECTION
+====================================*/
+.hero {
+    // padding: 0rem 0rem;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-areas: "hero-image hero-image hero-image hero-image hero-main hero-main hero-main hero-main hero-main";
+
+
+    /*==================================
+            HERO__IMAGE SECTION
+    ====================================*/
+    &__image {
+        grid-area: hero-image;
+        // background: cyan;
+        padding: 5rem;
+        // padding-bottom: 8rem;
+        // padding-bottom po to aby zapelnic biale pole
+
+
+        // background-image: url(/images/bg-intro.svg);
+        // background-color: hsl(257, 40%, 49%);
+        // background-color: white;
+        // background-size: cover;
+
+        background: rgba(122, 119, 219, 1);
+        background: -moz-linear-gradient(45deg, rgba(122, 119, 219, 1) 0%, rgba(96, 92, 219, 1) 8%, rgba(69, 65, 148, 1) 51%, rgba(40, 35, 133, 1) 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(122, 119, 219, 1)), color-stop(8%, rgba(96, 92, 219, 1)), color-stop(51%, rgba(69, 65, 148, 1)), color-stop(100%, rgba(40, 35, 133, 1)));
+        background: -webkit-linear-gradient(45deg, rgba(122, 119, 219, 1) 0%, rgba(96, 92, 219, 1) 8%, rgba(69, 65, 148, 1) 51%, rgba(40, 35, 133, 1) 100%);
+        background: -o-linear-gradient(45deg, rgba(122, 119, 219, 1) 0%, rgba(96, 92, 219, 1) 8%, rgba(69, 65, 148, 1) 51%, rgba(40, 35, 133, 1) 100%);
+        background: -ms-linear-gradient(45deg, rgba(122, 119, 219, 1) 0%, rgba(96, 92, 219, 1) 8%, rgba(69, 65, 148, 1) 51%, rgba(40, 35, 133, 1) 100%);
+        background: linear-gradient(45deg, rgba(122, 119, 219, 1) 0%, rgba(96, 92, 219, 1) 8%, rgba(69, 65, 148, 1) 51%, rgba(40, 35, 133, 1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7a77db', endColorstr='#282385', GradientType=1);
+
+
+        /*==================================
+            CLASS ILUSTRATION
+        ====================================*/
+        .illustration-main {
+            width: 100%;
+        }
+
+
+        /*==================================
+            HERO__IMAGE__SOCIAL SECTION
+        ====================================*/
+        &__social {
+            display: none;
+        }
+    }
+
+
+    /*==================================
+            HERO__MAIN SECTION
+     ====================================*/
+    &__main {
+        grid-area: hero-main;
+        background: white;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "hero-main-social""hero-main-information""hero-main-information-signUp""hero-main-information-privacy";
+
+
+        /*==================================
+            HERO__MAIN__SOCIAL SECTION
+        ====================================*/
+        &__social {
+            grid-area: hero-main-social;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-areas: "hero-main-social-logo hero-main-social-socialIcons";
+            padding: 2rem 5rem 0rem 5rem;
+
+
+            /*==================================
+                HERO__MAIN__SOCIAL__LOGO SECTION
+            ====================================*/
+            &__logo {
+                grid-area: hero-main-social-logo;
+                // background: purple;
+
+            }
+
+            /*===========================================
+            HERO__MAIN__SOCIAL__LOGO__SOCIALICONS SECTION
+            =============================================*/
+            &__socialIcons {
+                grid-area: hero-main-social-socialIcons;
+                justify-self: end;
+
+                // background: pink;
+
+                .icons {
+                    padding: 0rem 2rem;
+                }
+            }
+        }
+
+        /*==================================================================================================================
+            SAME VALUES FOR SECTIONS HERO__MAIN__INFORMATION, HERO__MAIN_INFORMATION-SIGNUP, HERO__MAIN__INFORMATION-PRIVACY
+        ===================================================================================================================*/
+        &__information,
+        &__information-signUp,
+        &__information-privacy {
+            padding: 0rem 5rem;
+        }
+
+
+        /*==================================
+            HERO__MAIN__INFORMATION SECTION
+         ====================================*/
+        &__information {
+            grid-area: hero-main-information;
+            color: black;
+            text-align: left;
+
+            .information-h1 {
+                font-size: 2.8rem;
+                margin: 2rem 0rem;
+            }
+
+            .information-p {
+                color: $gray;
+                padding-right: 10rem;
+            }
+        }
+
+
+        /*========================================
+            HERO__MAIN__INFORMATION-SIGNUP SECTION
+        ==========================================*/
+        &__information-signUp {
+            grid-area: hero-main-information-signUp;
+            // background: green;
+
+            .signUp-form {
+                padding-top: 1rem;
+            }
+
+            .signUp-input,
+            .signUp-button {
+                display: inline-block;
+                cursor: pointer;
+                color: #ffffff;
+                font-size: 17px;
+                text-decoration: none;
+                text-shadow: 0px 1px 0px #0c2e06;
+                border: solid 1px white;
+                -moz-border-radius: 4px;
+                -webkit-border-radius: 4px;
+                border-radius: 4px;
+                margin: 2%;
+            }
+
+            .signUp-input {
+                background-color: white;
+                -webkit-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
+                -moz-box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
+                box-shadow: 2px 3px 5px 0px rgba(0, 0, 0, 0.25);
+                padding: 1rem 15%;
+                margin-left: 0%;
+            }
+
+            .signUp-button {
+                background-color: $green;
+                padding: 1rem 11%;
+            }
+
+            .signUp-button:hover {
+                background-color: hsl(163, 95%, 35%);
+            }
+
+            .signUp-button:active {
+                position: relative;
+                top: 1px;
+            }
+
+        }
+
+        /*========================================
+            HERO__MAIN__INFORMATION-PRIVACY SECTION
+        ==========================================*/
+        &__information-privacy {
+            grid-area: hero-main-information-privacy;
+            justify-self: end;
+            padding-right: 6.5rem;
+            // background: darkkhaki;
+        }
+    }
+}
+
+
+/*========================================
+              MEDIA QUERIES
+==========================================*/
+
+@media (max-width:864px) {
+
+
+    /*==========================
+            HERO SECTION
+     ===========================*/
+    .hero {
+        grid-template-columns: 1fr;
+        grid-template-areas: "hero-image""hero-main";
+
+        /*==========================
+            HERO__IMAGE SECTION
+        ===========================*/
+        &__image {
+            grid-area: hero-image;
+            padding-bottom: 12.5rem;
+            background-image: url(/images/bg-intro.svg);
+            background-color: white;
+            background-size: 100% 100%;
+
+            /*==========================
+             HERO__IMAGE__SOCIAL SECTION
+            ===========================*/
+            &__social {
+                grid-area: hero-image-social;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas: "hero-image-social-logo hero-image-social-socialIcons";
+                padding-bottom: 15%;
+
+                /*=================================
+                  HERO__IMAGE__SOCIAL__LOGO SECTION
+                ===================================*/
+                &__logo {
+                    grid-area: hero-image-social-logo;
+
+                    // .logoMobile {
+                    //     filter: brightness(0) invert(1);
+                    //     // fill: red;
+                    // }
+                }
+
+                /*=======================================
+                  HERO__IMAGE__SOCIA__SOCIALICONS SECTION
+                =========================================*/
+                &__socialIcons {
+                    grid-area: hero-image-social-socialIcons;
+                    justify-self: end;
+
+                    .icons {
+                        padding: 0rem .8rem;
+                        color: white;
+                    }
+                }
+            }
+
+        }
+
+
+        /*=================================
+              HERO__MAIN SECTION
+        ===================================*/
+        &__main {
+            grid-area: hero-main;
+
+            /*=================================
+              HERO__MAIN__SOCIAL SECTION
+            ===================================*/
+            &__social {
+                display: none;
+            }
+
+            /*=================================
+              HERO__MAIN__INFORMATION SECTION
+            ===================================*/
+            &__information {
+                grid-area: hero-main-information;
+
+                .information-h1 {
+                    font-size: 2rem;
+                }
+
+                .information-p {
+                    padding-right: 0rem;
+                }
+
+            }
+
+            /*======================================
+              HERO__MAIN__INFORMATION-SIGNUP SECTION
+            ========================================*/
+            &__information-signUp {
+                grid-area: hero-main-information-signUp;
+
+                .signUp-form {
+                    padding-top: 1rem;
+                }
+
+                .signUp-input {
+                    display: grid;
+                    background-color: white;
+                    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+                    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+                    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+                    padding: 1rem 0rem;
+                    width: 100%;
+
+                }
+
+                .signUp-button {
+                    margin: 0;
+                }
+
+            }
+
+            /*=======================================
+              HERO__MAIN__INFORMATION-PRIVACY SECTION
+             ========================================*/
+            &__information-privacy {
+                grid-area: hero-main-information-privacy;
+                padding-bottom: 2rem;
+                padding-right: 5rem;
+            }
+        }
+    }
+
+
+
+
+
+
+    // &__social {
+    //     grid-area: hero-main-social-logo;
+    // }
+
+
+
+    // &__logo {
+    //     grid-area: hero-main-social-logo;
+
+
+    // }
+
+    // &__socialIcons {
+    //     grid-area: hero-main-social-socialIcons;
+    // }
+
+}
